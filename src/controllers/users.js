@@ -171,10 +171,9 @@ const updatePassword = catchAsync(async (req,res,next)=>{
 
 const deleted = catchAsync(async (req,res,next)=>{
     const { user } = req;
-    const { status } = req.body;
 
     await user.update({
-        status
+        status: false
     });
     
     res.status(200).json({
