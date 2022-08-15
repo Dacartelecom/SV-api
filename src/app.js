@@ -66,5 +66,7 @@ app.all('*',(req,res,next)=>{
 
 app.use(globalErrorHandler);
 
-module.exports = { app };
+const server = http.createServer(app);
+
+module.exports = { server };
 
