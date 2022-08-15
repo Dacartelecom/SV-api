@@ -6,6 +6,7 @@ const compression = require('compression');
 const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
+const http = require('http');
 
 //Routers
 const { usersRouter } = require('./routes/users.routes');
