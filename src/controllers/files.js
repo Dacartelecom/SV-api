@@ -162,10 +162,6 @@ const getPermission = catchAsync(async (req,res,next)=>{
 const permissionNull = catchAsync(async (req,res,next)=>{
     const { file,userSession } = req;
 
-    if (file.permission !== userSession.id) {
-        return next(new AppError('You dont have permission',403));
-    }
-
     await file.update({
         permission: null
     });
